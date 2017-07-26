@@ -40,6 +40,8 @@ authorization server.
   - This is the base URL hosting the services that will be accessed.
   - The authorization server verifies this is a URL known to it, as 
     to prevent you from accidentally sending tokens to a malicious party.
+	
+_Note_:  An additional parameter "state" is automatically generated for you by the demo application.  Your client application should generate and store its own state value associated to a given device to prevent malicious parties from orchestrating a "session fixation"-style attack.
 
 ## Step 4:  Submit the request
 
@@ -342,7 +344,3 @@ _Note_:  Existing access tokens are still valid until they expire.
 - Click "Get Authorization Code"
 - Note the error that an error page is presented directly to the user
   - The authorization server will not redirect the user to an "untrusted" callback URI per specifications.
-
-
-
-
